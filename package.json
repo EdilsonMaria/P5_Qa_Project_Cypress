@@ -1,0 +1,15 @@
+{
+  "name": "projectcypress",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo a automação de testes end-to-end (E2E) para **sites públicos**, utilizando a metodologia **BDD (Behavior-Driven Development)** com as ferramentas **Cypress**, **Cucumber** e linguagem **Gherkin**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.4.1"
+  }
+}
