@@ -1,4 +1,4 @@
-# 🧪 Projeto de Testes Automatizados BDD com Cypress + Cucumber + Gherkin
+# 🧠 Testes End-to-End BDD com Cypress + Cucumber + Gherkin
 
 Este projeto tem como objetivo a automação de testes end-to-end (E2E) para **sites públicos**, utilizando a metodologia **BDD (Behavior-Driven Development)** com as ferramentas **Cypress**, **Cucumber** e linguagem **Gherkin**.
 
