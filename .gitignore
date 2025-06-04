@@ -20,10 +20,6 @@ build/
 .env
 .env.* 
 
-# Cypress
-cypress/screenshots/
-cypress/videos/
-
 # Relatórios
 coverage/
 .nyc_output/
