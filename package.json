@@ -13,6 +13,8 @@
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
     "@cypress/webpack-preprocessor": "^6.0.4",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "cypress": "^14.4.1",
     "esbuild": "^0.25.5"
   }

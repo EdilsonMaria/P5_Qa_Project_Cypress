@@ -1,25 +1,17 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Dado, Quando, Entao } from '@badeball/cypress-cucumber-preprocessor/steps';
 
-Given('que o usuário acessa o site do imposto de renda', () => {
-  cy.visit('/');
+Dado('que eu acesso o site {string}', (url) => {
+  cy.visit(url);
 });
 
-When('a página for carregada completamente', () => {
+Quando('a página carregar completamente', () => {
   cy.document().should('exist');
 });
 
-Then('o título da página deve ser {string}', (tituloEsperado) => {
-  cy.title().should('eq', tituloEsperado);
+Entao('o título da página deve ser {string}', (titulo) => {
+  cy.title().should('eq', titulo);
 });
 
-When('o usuário visualizar a página', () => {
-  cy.document().should('exist');
-});
-
-Then('deve existir um link ou botão com o texto {string}', (texto) => {
-  cy.contains(texto).should('exist');
-});
-
-Then('o link deve estar visível e acessível', () => {
-  cy.contains('Baixar o programa').should('be.visible');
+Entao('deve existir um link ou botão com o texto {string}', (texto) => {
+  cy.contains(texto).should('be.visible');
 });

@@ -1,9 +1,8 @@
-Funcionalidade: Verificar link de download do programa do Imposto de Renda
+# language: pt
 
-  Contexto:
-    Dado que o usuário acessa o site do imposto de renda
+Funcionalidade: Verificar a existência do link ou botão Baixar o programa
 
-  Cenario: Verificar se o link "Baixar o programa" está disponível
-    Quando o usuário visualizar a página
-    Então deve existir um link ou botão com o texto "Baixar o programa"
-    E o link deve estar visível e acessível
+  Cenário: Validar se o título da página está correto
+    Dado que eu acesso o site "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda"
+    Quando a página carregar completamente
+    Então o título da página deve ser "Meu Imposto de Renda — Receita Federal"

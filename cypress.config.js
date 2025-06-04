@@ -21,4 +21,3 @@ module.exports = defineConfig({
     baseUrl: "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda"
   }
 });
-
