@@ -1,8 +1,8 @@
 # 🧠 Testes End-to-End BDD com Cypress + Cucumber + Gherkin
 
-Este projeto tem como objetivo a automação de testes end-to-end (E2E) para **sites públicos**, utilizando a metodologia **BDD (Behavior-Driven Development)** com as ferramentas **Cypress**, **Cucumber** e linguagem **Gherkin**.
+Este projeto tem como objetivo a automação de testes end-to-end (E2E) para **sites públicos**, em específico o site da Receita Federal sobre **Meu Imposto de Renda**, utilizando a metodologia **BDD (Behavior-Driven Development)** com as ferramentas **Cypress**, **Cucumber** e linguagem **Gherkin**.
 
-O projeto foi desenvolvido por **Edilson Maria** e **Nayara dos Santos**, com foco em entregar testes automatizados de alta qualidade, legíveis tanto para times técnicos quanto não técnicos.
+O projeto foi desenvolvido por **Edilson Maria** e **Nayara dos Santos**, com foco em entregar testes automatizados de alta qualidade.
 
 ---
 
@@ -18,45 +18,63 @@ O projeto foi desenvolvido por **Edilson Maria** e **Nayara dos Santos**, com fo
 ## 📂 Estrutura de Pastas
 
 ```
-├── cypress
-│   ├── e2e
-│   │   ├── features             # Arquivos .feature (cenários em Gherkin)
-│   │   ├── step_definitions     # Definições dos passos (Steps)
-│   │   └── support              # Configurações e comandos customizados
-│   ├── fixtures                 # Massa de dados simulada (JSON)
-│   └── screenshots              # Prints automáticos dos testes
-├── cypress.config.js            # Configuração principal do Cypress
-├── package.json                 # Gerenciamento de dependências e scripts
-└── README.md                    # Documentação do projeto
+Project_Cypress/
+├── cypress/
+│   ├── e2e/
+│   │   └── features/
+│   │       ├── link_baixar_programa.feature
+│   │       ├── titulo_pagina.feature
+│   │       └── step_definitions/
+│   │           └── meuImpostoDeRendaSteps.cy.js
+│   ├── support/
+│   │   ├── commands.js
+│   │   └── e2e.js
+├── .gitignore
+├── cypress.config.js
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 📜 Exemplo de Cenário em Gherkin
+## 🎯 Cenários de Teste (Gherkin)
 
-```gherkin
-Feature: Validação da Página Inicial
+Este projeto possui dois cenários de testes automatizados utilizando a linguagem **Gherkin**, que segue uma sintaxe de fácil entendimento, baseada na estrutura **Dado, Quando, Então**. Essa abordagem facilita a leitura dos testes tanto por desenvolvedores quanto por pessoas não técnicas.
 
-  Scenario: Verificar o título da página
-    Given que eu acesso o site "https://exemplo.com"
-    Then o título da página deve ser "Exemplo - Bem-vindo"
-```
+### 🔹 Cenário 1: Verificar título da página
+
+- 📄 **Arquivo:** `cypress/e2e/features/titulo_pagina.feature`
+
+**Objetivo:**  
+Garantir que, ao acessar o site do **Imposto de Renda**, o título da página seja exibido corretamente.
+
+**Fluxo do teste:**
+
+- **Dado** que o usuário acessa o site do imposto de renda,
+- **Quando** a página for carregada completamente,
+- **Então** o título da página deve ser **"Meu Imposto de Renda — Receita Federal"**.
+
+**Validação:**  
+Este teste assegura que o site foi carregado corretamente e que o título da página corresponde ao esperado, garantindo que o usuário está na página correta.
 
 ---
 
-## 🧠 Exemplo de Step Definition
+### 🔹 Cenário 2: Verificar se o link "Baixar o programa" está disponível
 
-```javascript
-import { Given, Then } from '@badeball/cypress-cucumber-preprocessor';
+- 📄 **Arquivo:** `cypress/e2e/features/link_baixar_programa.feature`
 
-Given('que eu acesso o site {string}', (url) => {
-  cy.visit(url);
-});
+**Objetivo:**  
+Verificar se o link ou botão para **"Baixar o programa"** do imposto de renda está presente e visível na página.
 
-Then('o título da página deve ser {string}', (title) => {
-  cy.title().should('eq', title);
-});
-```
+**Fluxo do teste:**
+
+- **Dado** que o usuário acessa o site do imposto de renda,
+- **Quando** o usuário visualizar a página,
+- **Então** deve existir um link ou botão com o texto **"Baixar o programa"**,
+- **E** esse link deve estar **visível e acessível**.
+
+**Validação:**  
+Este teste garante que os usuários consigam encontrar facilmente a opção de download do programa, que é uma funcionalidade essencial oferecida na página.
 
 ---
 
@@ -65,8 +83,8 @@ Then('o título da página deve ser {string}', (title) => {
 ### 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://https://github.com/EdilsonMaria/P5_Qa_Project_Cypress
+cd P5_Qa_Project_Cypress
 ```
 
 ### 2. Instale as dependências necessárias:
@@ -113,7 +131,7 @@ npm run test:open   # Executa os testes com interface gráfica
 
 - 🔹 Criação de cenários descritivos e claros utilizando Gherkin.
 - 🔹 Organização dos steps por funcionalidade para fácil manutenção.
-- 🔹 Uso de dados dinâmicos através de fixtures.
+- 🔹 Uso de dados dinâmicos através de fixtures (se aplicável).
 - 🔹 Estrutura modular, escalável e de fácil entendimento.
 - 🔹 Relatórios automáticos e prints de evidências.
 
@@ -134,11 +152,3 @@ Desenvolvido por:
 
 - **Edilson Maria**  
 - **Nayara dos Santos**
-
----
-
-## 💻 Sobre o Projeto
-
-Projeto desenvolvido para automação de testes BDD utilizando Cypress, Cucumber e Gherkin, com foco na validação de funcionalidades de **sites públicos**. O objetivo principal é garantir qualidade, rastreabilidade e comunicação eficiente entre times técnicos e de negócio.
-
----
