@@ -7,4 +7,4 @@ Cenário: Validar se ao clicar em "Fazer minha declaração" são exibidas infor
     Quando a página carregar completamente
     E eu clico no link "Fazer minha declaração"
     Então a URL deve ser "https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda"
-    E o título da página deve ser "Declarar meu imposto de renda — Serviços e Informações do Brasil"
+    E o título da página deve ser "Declarar meu imposto de renda"
