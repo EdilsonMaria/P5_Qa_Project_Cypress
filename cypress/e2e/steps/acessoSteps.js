@@ -1,4 +1,4 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
 Given("acesso ao site Meu imposto de Renda", () => {
   cy.visit("https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda");
