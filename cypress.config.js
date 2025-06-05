@@ -1,23 +1,10 @@
 const { defineConfig } = require("cypress");
-const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
-const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
-const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
-
+const cucumber = require("cypress-cucumber-preprocessor").default;
 module.exports = defineConfig({
   e2e: {
-    specPattern: "cypress/e2e/**/*.feature",
-    async setupNodeEvents(on, config) {
-      await addCucumberPreprocessorPlugin(on, config);
-
-      on(
-        "file:preprocessor",
-        createBundler({
-          plugins: [createEsbuildPlugin.default(config)],
-        })
-      );
-
-      return config;
+    specPattern: "**/*.feature",
+    setupNodeEvents(on, config) {
+      on("file:preprocessor", cucumber());
     },
-    baseUrl: "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda"
-  }
+  },
 });
