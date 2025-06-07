@@ -21,11 +21,16 @@ O projeto foi desenvolvido por **Edilson Maria** e **Nayara dos Santos**, com fo
 Project_Cypress/
 ├── cypress/
 │   ├── e2e/
-│   │   └── features/
-│   │       ├── link_baixar_programa.feature
-│   │       ├── titulo_pagina.feature
-│   │       └── step_definitions/
-│   │           └── meuImpostoDeRendaSteps.cy.js
+│   │   │── features/
+│   │   │   ├── acessaFazerMinhaDeclaracao.feature
+│   │   │   ├── acessaMeuCpf.feature
+│   │   │   ├── testePaginaInicial.feature
+│   │   │   └── verificarLinkConsulta.feature
+│   │   └── steps/
+│   │       ├── acessaFazerMinhaDeclaracao.js
+│   │       ├── acessaMeuCpf.js
+│   │       ├── testePaginaInicial.js
+│   │       └── verificarLinkConsulta.js
 │   ├── support/
 │   │   ├── commands.js
 │   │   └── e2e.js
