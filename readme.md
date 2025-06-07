@@ -4,6 +4,10 @@ Este projeto tem como objetivo a automação de testes end-to-end (E2E) para **s
 
 O projeto foi desenvolvido por **Edilson Maria** e **Nayara dos Santos**, com foco em entregar testes automatizados de alta qualidade.
 
+📄 **Explicação do Projeto**  
+Você pode visualizar todos os materiais explicativos no seguinte link:  
+🔗 [Google Drive - Explicação do Projeto](https://drive.google.com/drive/folders/1Vzv9Db4_szokyg6ikJkzhSKhOLDES9zu?usp=sharing)
+
 ---
 
 ## 🚀 Tecnologias Utilizadas
