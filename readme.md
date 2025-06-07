@@ -22,18 +22,18 @@ Project_Cypress/
 ├── cypress/
 │   ├── e2e/
 │   │   │── features/
-│   │   │   ├── acessaFazerMinhaDeclaracao.feature
-│   │   │   ├── acessaMeuCpf.feature
-│   │   │   ├── testePaginaInicial.feature
-│   │   │   └── verificarLinkConsulta.feature
+│   │   │   ├── 1_verificarLinkConsulta.feature
+│   │   │   ├── 2_acessaFazerMinhaDeclaracao.feature
+│   │   │   ├── 3_testePaginaInicial.feature
+│   │   │   └── 4_acessaMeuCpf.feature
 │   │   └── steps/
-│   │       ├── acessaFazerMinhaDeclaracao.js
-│   │       ├── acessaMeuCpf.js
-│   │       ├── testePaginaInicial.js
-│   │       └── verificarLinkConsulta.js
-│   ├── support/
-│   │   ├── commands.js
-│   │   └── e2e.js
+│   │       ├── 1_verificarLinkConsulta.js
+│   │       ├── 2_acessaFazerMinhaDeclaracao.js
+│   │       ├── 3_testePaginaInicial.js
+│   │       └── 4_acessaMeuCpf.js
+│   └── support/
+│       ├── commands.js
+│       └── e2e.js
 ├── .gitignore
 ├── cypress.config.js
 ├── package.json
@@ -46,40 +46,81 @@ Project_Cypress/
 
 Este projeto possui dois cenários de testes automatizados utilizando a linguagem **Gherkin**, que segue uma sintaxe de fácil entendimento, baseada na estrutura **Dado, Quando, Então**. Essa abordagem facilita a leitura dos testes tanto por desenvolvedores quanto por pessoas não técnicas.
 
-### 🔹 Cenário 1: Verificar título da página
+---
 
-- 📄 **Arquivo:** `cypress/e2e/features/titulo_pagina.feature`
+### 🔹 Cenário 1: Verificar se o link "Consultar meu imposto de renda" está visível e acessível
+
+- 📄 **Arquivo:** `cypress/e2e/features/VerificaLinkConsulta.feature`
 
 **Objetivo:**  
-Garantir que, ao acessar o site do **Imposto de Renda**, o título da página seja exibido corretamente.
+Garantir que o link para **"Consultar meu imposto de renda"** esteja presente, visível e acessível na página oficial do serviço.
 
 **Fluxo do teste:**
 
-- **Dado** que o usuário acessa o site do imposto de renda,
-- **Quando** a página for carregada completamente,
-- **Então** o título da página deve ser **"Meu Imposto de Renda — Receita Federal"**.
+- **Dado** que o usuário acessa o site do imposto de renda,  
+- **Quando** a página carregar completamente,  
+- **Então** o link **"Consultar meu imposto de renda"** deve estar **visível e disponível**.
 
 **Validação:**  
-Este teste assegura que o site foi carregado corretamente e que o título da página corresponde ao esperado, garantindo que o usuário está na página correta.
+Este teste garante que o usuário consiga localizar facilmente o link de consulta do imposto de renda, o que é essencial para acessar informações sobre sua declaração.
 
 ---
 
-### 🔹 Cenário 2: Verificar se o link "Baixar o programa" está disponível
+### 🔹 Cenário 2: Validar redirecionamento e conteúdo ao clicar em "Fazer minha declaração"
 
-- 📄 **Arquivo:** `cypress/e2e/features/link_baixar_programa.feature`
+- 📄 **Arquivo:** `cypress/e2e/features/acessaFazerMinhaDeclaração.feature`
 
 **Objetivo:**  
-Verificar se o link ou botão para **"Baixar o programa"** do imposto de renda está presente e visível na página.
+Verificar se ao clicar no link **"Fazer minha declaração"**, o usuário é corretamente redirecionado para a página apropriada e o título da página está conforme o esperado.
 
 **Fluxo do teste:**
 
-- **Dado** que o usuário acessa o site do imposto de renda,
-- **Quando** o usuário visualizar a página,
-- **Então** deve existir um link ou botão com o texto **"Baixar o programa"**,
-- **E** esse link deve estar **visível e acessível**.
+- **Dado** que o usuário acessa o site do imposto de renda,  
+- **Quando** a página carregar completamente,  
+- **E** o usuário clicar no link **"Fazer minha declaração"**,  
+- **Então** a URL deve ser **"https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda"**,  
+- **E** o título da página deve ser **"Declarar meu imposto de renda"**.
 
 **Validação:**  
-Este teste garante que os usuários consigam encontrar facilmente a opção de download do programa, que é uma funcionalidade essencial oferecida na página.
+Este teste assegura que o link redireciona corretamente para a área de declaração do imposto de renda e que o conteúdo carregado é o correto, reforçando a confiança do usuário no processo de navegação.
+
+---
+
+### 🔹 Cenário 3: Verificar elementos essenciais da página inicial
+
+- 📄 **Arquivo:** `cypress/e2e/features/testaPaginaInicial.feature`
+
+**Objetivo:**  
+Garantir que a página inicial da seção de assuntos da Receita Federal carregue corretamente e exiba o título esperado.
+
+**Fluxo do teste:**
+
+- **Dado** que o usuário acessa o site da Receita Federal,  
+- **Quando** a página carregar completamente,  
+- **Então** o título da página deve ser **"Assuntos — Receita Federal"**.
+
+**Validação:**  
+Este teste confirma que a página principal foi carregada corretamente e que o usuário está visualizando o conteúdo esperado da seção de assuntos da Receita Federal.
+
+---
+
+### 🔹 Cenário 4: Navegar para a seção "Meu CPF"
+
+- 📄 **Arquivo:** `cypress/e2e/features/acessaMeuCpf.feature`
+
+**Objetivo:**  
+Verificar se, ao clicar no link **"Meu CPF"**, o usuário é redirecionado corretamente para a página correspondente e que o conteúdo está de acordo com o esperado.
+
+**Fluxo do teste:**
+
+- **Dado** que o usuário acessa o site da Receita Federal,  
+- **Quando** a página carregar completamente,  
+- **E** o usuário clicar no link **"Meu CPF"**,  
+- **Então** a URL deve ser **"https://www.gov.br/receitafederal/pt-br/assuntos/meu-cpf"**,  
+- **E** o título da página deve ser **"Meu CPF — Receita Federal"**.
+
+**Validação:**  
+Este teste assegura que a navegação até a área de CPF está funcional e que o título da página confirma o destino correto, promovendo uma experiência confiável ao usuário.
 
 ---
 
